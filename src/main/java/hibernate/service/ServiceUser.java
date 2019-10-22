@@ -1,32 +1,33 @@
 package hibernate.service;
 
-import hibernate.dao.DaoAccount;
-import hibernate.dao.DaoUser;
-import hibernate.model.Users;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.test.context.ContextConfiguration;
-
-import java.util.List;
+import hibernate.dao.DaoPlanet;
+import hibernate.model.Planet;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
-@ContextConfiguration("classpath:beans.xml")
+
 public class ServiceUser {
 
-    @Qualifier("daoUser")
-    private DaoUser daoUser;
+    @Autowired
+    private DaoPlanet daoPlanet;
 
     public ServiceUser() {
     }
 
-    public ServiceUser(DaoUser daoUser) {
-        this.daoUser = daoUser;
+    public ServiceUser(DaoPlanet daoPlanet) {
+        this.daoPlanet = daoPlanet;
     }
 
-    public Users find(int id) {
-        return daoUser.findById(id);
+    public Planet find(int id) {
+        return daoPlanet.findById(id);
     }
 
-    public List<Users> findAllUsers() {
-        return daoUser.findAll();
+    public void saves(Planet planet) {
+        daoPlanet.save(planet);
     }
+
+    public void delete(Planet planet){
+        daoPlanet.delete(planet);
+    }
+
 }

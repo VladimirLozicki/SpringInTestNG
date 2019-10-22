@@ -1,7 +1,6 @@
 package hibernate.util;
 
-import hibernate.model.Account;
-import hibernate.model.Users;
+import hibernate.model.Planet;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -20,8 +19,7 @@ public class HibernateSessionFactoryUtil {
             try {
                 Configuration configuration = new Configuration().configure();
                 configuration
-                        .addAnnotatedClass(Users.class)
-                        .addAnnotatedClass(Account.class);
+                        .addAnnotatedClass(Planet.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
