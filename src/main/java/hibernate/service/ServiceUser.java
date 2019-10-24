@@ -18,16 +18,9 @@ public class ServiceUser {
         this.daoPlanet = daoPlanet;
     }
 
-    public Planet find(int id) {
-        return daoPlanet.findById(id);
-    }
-
     public void saves(Planet planet) {
         daoPlanet.save(planet);
     }
 
-    public void delete(Planet planet){
-        daoPlanet.delete(planet);
-    }
 
 }

@@ -1,26 +1,28 @@
 package hibernate.dao;
 
 import hibernate.model.Planet;
-import hibernate.util.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import static hibernate.util.HibernateSessionFactoryUtil.getSessionFactory;
 
+@Repository
 public class DaoPlanet {
 
-    @Transactional
-    public Planet findById(int id) {
-        return HibernateSessionFactoryUtil
-                .getSessionFactory()
-                .openSession()
-                .get(Planet.class, id);
+    private SessionFactory sessionFactory;
+
+    @Autowired
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
+
 
     @Transactional
     public Planet save(Planet galaxy) {
-        Session session = getSessionFactory().openSession();
+        Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.save(galaxy);
         transaction.commit();
@@ -28,13 +30,4 @@ public class DaoPlanet {
         return galaxy;
     }
 
-    @Transactional
-    public Planet delete(Planet galaxy) {
-        Session session = getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.delete(galaxy);
-        transaction.commit();
-        session.close();
-        return galaxy;
-    }
 }

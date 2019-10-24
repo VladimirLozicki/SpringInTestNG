@@ -14,7 +14,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "hibernate")
-@Component
 public class WebConfig  {
 
     @Bean
@@ -39,5 +38,4 @@ public class WebConfig  {
     public Planet getPlanet(){
         return new Planet();
     }
-
 }

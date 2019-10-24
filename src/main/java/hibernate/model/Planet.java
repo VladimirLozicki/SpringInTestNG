@@ -15,6 +15,7 @@ public class Planet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    private String name;
     public Planet() {
         /*
          * must be for hibernate
@@ -28,5 +29,13 @@ public class Planet {
 
     public void setUserId(int userId) {
         this.id = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
