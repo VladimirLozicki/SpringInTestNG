@@ -27,8 +27,7 @@ public class PlanetTest extends AbstractTestNGSpringContextTests {
     @Test
     public void findIdUser() {
         Planet planet = new Planet();
-        planet.setName("dffb");
-        serviceUser.saves(planet);
+        planet.setName("vladimir");
+        //serviceUser.saves(planet);
     }
-
 }
