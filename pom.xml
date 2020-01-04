@@ -3,10 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <modules>
-        <module>SpringSecurity</module>
-    </modules>
-
     <groupId>planet</groupId>
     <artifactId>ExampleSpringTest</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -25,7 +21,6 @@
             <version>2.1</version>
             <scope>provided</scope>
         </dependency>
-
 
         <dependency>
             <groupId>mysql</groupId>
@@ -117,6 +112,17 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>5.2.0.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>5.2.0.RELEASE</version>
         </dependency>
 
     </dependencies>

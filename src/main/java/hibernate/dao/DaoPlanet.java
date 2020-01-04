@@ -19,7 +19,6 @@ public class DaoPlanet {
         this.sessionFactory = sessionFactory;
     }
 
-
     @Transactional
     public Planet save(Planet galaxy) {
         Session session = sessionFactory.openSession();

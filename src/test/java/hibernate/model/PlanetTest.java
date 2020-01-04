@@ -28,6 +28,6 @@ public class PlanetTest extends AbstractTestNGSpringContextTests {
     public void findIdUser() {
         Planet planet = new Planet();
         planet.setName("vladimir");
-        //serviceUser.saves(planet);
+        serviceUser.saves(planet);
     }
 }

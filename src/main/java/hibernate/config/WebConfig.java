@@ -1,12 +1,9 @@
 package hibernate.config;
 
-import hibernate.dao.DaoPlanet;
-import hibernate.model.Planet;
 import hibernate.service.ServiceUser;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -25,17 +22,7 @@ public class WebConfig  {
     }
 
     @Bean
-    public ServiceUser getServiceUser(){
-        return new ServiceUser(getDao());
-    }
-
-    @Bean
-    public DaoPlanet getDao(){
-        return new DaoPlanet();
-    }
-
-    @Bean
-    public Planet getPlanet(){
-        return new Planet();
+    public ServiceUser get(){
+        return new ServiceUser();
     }
 }
